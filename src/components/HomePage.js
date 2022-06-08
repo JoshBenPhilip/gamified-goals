@@ -1,7 +1,3 @@
 export default function HomePage() {
-  return (
-    <>
-      <Tasks />
-    </>
-  );
+  return <>{/* <Tasks /> */}</>;
 }

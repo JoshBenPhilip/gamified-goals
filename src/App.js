@@ -1,5 +1,4 @@
 import { Layout } from "antd";
-import { Header } from "antd/lib/layout/layout";
 import HomePage from "./components/HomePage";
 
 const styles = {
@@ -17,10 +16,13 @@ const styles = {
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Gamified Goals</h1>
-      <Header>Gamified Goals</Header>
-      <HomePage />
-    </div>
+    <Layout>
+      <h1>Gamify</h1>
+      <Layout.Header style={styles.header}>Gamified Goals</Layout.Header>
+      <Layout.Content style={styles.content}>
+        <HomePage />
+      </Layout.Content>
+      <Layout.Footer>&copy; 2022, SoulWorks LLC.</Layout.Footer>
+    </Layout>
   );
 }
