@@ -12,7 +12,7 @@ export default function Task({ item, setTasks, setLoading }) {
   }, [item]);
   const handleToggleTaskDone = () => {
     setLoading(true);
-    fetch(`mydb/${item.id}`, {
+    fetch(`https://firestore-express-jbp.web.app/tasks/${item.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export default function Task({ item, setTasks, setLoading }) {
     })
       .then(() => {
         // THEN: fetch our tasks
-        fetch("myApiEndpoint/Task")
+        fetch("https://firestore-express-jbp.web.app/tasks")
           .then((response) => response.json())
           .then((data) => {
             setTasks(data);
@@ -40,7 +40,9 @@ export default function Task({ item, setTasks, setLoading }) {
           style={{ margin: "10px" }}
           onClick={handleToggleTaskDone}
           checked={item.done}
-        ></Checkbox>
+        >
+          {item.task}
+        </Checkbox>
       </List.Item>
     </>
   );

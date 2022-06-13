@@ -3,10 +3,11 @@ import { List } from "antd";
 import Task from "./Task.js";
 
 export default function TaskList({ tasks, setTasks, loading, setLoading }) {
+  // eslint-disable-next-line
   useEffect(() => {
     //GET DATA FROM API
     setLoading(true);
-    fetch("myDbAddressHere")
+    fetch("https://firestore-express-jbp.web.app/tasks")
       .then((response) => response.json())
       .then((data) => {
         setTasks(data);
@@ -25,7 +26,7 @@ export default function TaskList({ tasks, setTasks, loading, setLoading }) {
       size="large"
       bordered
       renderItem={(item) => (
-        <Task item={item} setLoading={setloading} setTasks={setTasks} />
+        <Task item={item} setLoading={setLoading} setTasks={setTasks} />
       )}
     />
   );

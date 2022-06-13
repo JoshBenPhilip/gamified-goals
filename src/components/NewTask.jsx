@@ -13,7 +13,7 @@ export default function NewTask({ setTasks, setLoading }) {
     const taskObject = {
       task: newTask,
     };
-    fetch("myDb", {
+    fetch("https://firestore-express-jbp.web.app/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export default function NewTask({ setTasks, setLoading }) {
       .then(() => {
         setNewTask("");
         //cool, we added a new task, now lets update the list
-        fetch("myDb")
+        fetch("https://firestore-express-jbp.web.app/tasks")
           .then((response) => response.json())
           .then((data) => {
             setTasks(data);
