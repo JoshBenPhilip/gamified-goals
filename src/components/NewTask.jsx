@@ -25,7 +25,7 @@ export default function NewTask({ setTasks, setLoading }) {
       .then(() => {
         setNewTask("");
         //cool, we added a new task, now lets update the list
-        fetch("https://firestore-express-jbp.web.app/tasks")
+        fetch(`https://firestore-express-jbp.web.app/tasks/${user.uid}`)
           .then((response) => response.json())
           .then((data) => {
             setTasks(data);
