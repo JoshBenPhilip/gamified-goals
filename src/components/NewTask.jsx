@@ -1,8 +1,9 @@
 import { Input } from "antd";
-
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../App";
 
 export default function NewTask({ setTasks, setLoading }) {
+  const { user } = useContext(UserContext);
   const [newTask, setNewTask] = useState("");
   const handleButtonSubmit = () => {
     if (newTask.trim() === "") {
@@ -12,6 +13,7 @@ export default function NewTask({ setTasks, setLoading }) {
     setLoading(true);
     const taskObject = {
       task: newTask,
+      userId: user.uid,
     };
     fetch("https://firestore-express-jbp.web.app/tasks", {
       method: "POST",
@@ -23,7 +25,7 @@ export default function NewTask({ setTasks, setLoading }) {
       .then(() => {
         setNewTask("");
         //cool, we added a new task, now lets update the list
-        fetch("https://firestore-express-jbp.web.app/tasks")
+        fetch(`https://firestore-express-jbp.web.app/tasks/${user.uid}`)
           .then((response) => response.json())
           .then((data) => {
             setTasks(data);
