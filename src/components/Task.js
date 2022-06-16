@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { List, Checkbox } from "antd";
+import { UserContext } from "../App";
 
 export default function Task({ item, setTasks, setLoading }) {
+  const { user } = useContext(UserContext);
   const [itemStyle, setItemStyle] = useState({});
   useEffect(() => {
     if (item.done) {
@@ -21,7 +23,7 @@ export default function Task({ item, setTasks, setLoading }) {
     })
       .then(() => {
         // THEN: fetch our tasks
-        fetch("https://firestore-express-jbp.web.app/tasks")
+        fetch(`https://firestore-express-jbp.web.app/tasks/${user.uid}`)
           .then((response) => response.json())
           .then((data) => {
             setTasks(data);
