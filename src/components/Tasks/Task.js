@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { List, Checkbox } from "antd";
-import { UserContext } from "../App";
+import { UserContext } from "../../App";
 
 export default function Task({ item, setTasks, setLoading }) {
   const { user } = useContext(UserContext);

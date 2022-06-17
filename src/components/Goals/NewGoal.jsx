@@ -1,21 +1,21 @@
 import { Input } from "antd";
 import { useState, useContext } from "react";
-import { UserContext } from "../App";
+import { UserContext } from "../../App";
 
-export default function NewTask({ setTasks, setLoading }) {
+export default function NewGoal({ setGoals, setLoading }) {
   const { user } = useContext(UserContext);
-  const [newTask, setNewTask] = useState("");
+  const [newGoal, setNewGoal] = useState("");
   const handleButtonSubmit = () => {
-    if (newTask.trim() === "") {
-      //if the new task is empty
+    if (newGoal.trim() === "") {
+      //if the new goal is empty
       return; // don't do anything
     }
     setLoading(true);
     const taskObject = {
-      task: newTask,
+      goal: newGoal,
       userId: user.uid,
     };
-    fetch("https://firestore-express-jbp.web.app/tasks", {
+    fetch("https://firestore-express-jbp.web.app/goals", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,12 +23,12 @@ export default function NewTask({ setTasks, setLoading }) {
       body: JSON.stringify(taskObject),
     })
       .then(() => {
-        setNewTask("");
-        //cool, we added a new task, now lets update the list
-        fetch(`https://firestore-express-jbp.web.app/tasks/${user.uid}`)
+        setNewGoal("");
+        //cool, we added a new Goal, now lets update the list
+        fetch(`https://firestore-express-jbp.web.app/goals/${user.uid}`)
           .then((response) => response.json())
           .then((data) => {
-            setTasks(data);
+            setGoals(data);
             setLoading(false);
           });
       })
@@ -38,13 +38,13 @@ export default function NewTask({ setTasks, setLoading }) {
       });
   };
   const handleInputText = (event) => {
-    setNewTask(event.target.value);
+    setNewGoal(event.target.value);
   };
   return (
     <Input.Search
-      value={newTask}
-      placeholder="Enter task name"
-      enterButton="Add Task"
+      value={newGoal}
+      placeholder="Enter Goal name"
+      enterButton="Add Goal"
       size="large"
       onSearch={handleButtonSubmit}
       onChange={handleInputText}

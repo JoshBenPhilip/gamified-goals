@@ -1,8 +1,8 @@
 import { Layout } from "antd";
 import { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import Login from "./components/Login";
+import HomePage from "./components/Scenes/HomePage";
+import Login from "./components/Scenes/Login";
 import Menubar from "./components/Menubar";
 import { connectAuth } from "./connectAuth";
 
