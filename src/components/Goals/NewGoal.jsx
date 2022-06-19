@@ -44,7 +44,7 @@ export default function NewGoal({ setGoals, setLoading }) {
     <Input.Search
       value={newGoal}
       placeholder="Enter Goal name"
-      enterButton="Add Goal"
+      enterButton="Set Goal"
       size="large"
       onSearch={handleButtonSubmit}
       onChange={handleInputText}

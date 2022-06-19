@@ -32,6 +32,8 @@ export default function App() {
       <UserContext.Provider value={{ user, setUser, connectAuth }}>
         <Layout className="layout">
           <Header>
+            {" "}
+            ``
             <Menubar />
           </Header>
           <Content>

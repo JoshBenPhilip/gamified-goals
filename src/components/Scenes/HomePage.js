@@ -22,14 +22,14 @@ export default function Homepage() {
       </section>
 
       <section style={{ background: "white", padding: "0 40px 40px" }}>
+        <NewTask setTasks={setTasks} setLoading={setLoading} />
+        <br />
         <TaskList
           tasks={tasks}
           setTasks={setTasks}
           loading={loading}
           setLoading={setLoading}
         />
-        <br />
-        <NewTask setTasks={setTasks} setLoading={setLoading} />
       </section>
     </>
   );
