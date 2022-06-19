@@ -53,7 +53,7 @@ export default function Login() {
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
       >
-        <Form.Item
+        {/* <Form.Item
           label="Email"
           name="email"
           rules={[{ required: true, message: "Please enter a valid email" }]}
@@ -64,7 +64,7 @@ export default function Login() {
           <Button type="primary" htmlType="submit">
             Login
           </Button>
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
           <Button onClick={handleGoogleLogin}>Google Login</Button>
         </Form.Item>
