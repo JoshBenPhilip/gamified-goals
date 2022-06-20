@@ -24,17 +24,20 @@ export default function Menubar() {
   };
 
   return (
-    <Menu theme="dark" mode="horizontal">
-      <Item
-        key="home"
-        onClick={() => navigate("/")}
-        icon={<HomeOutlined style={{ fontSize: "1.8em" }} />}
-      />
-      <Item
-        key="Logout"
-        onClick={handleSignOut}
-        icon={<LogoutOutlined style={{ fontSize: "1.8em" }} />}
-      />
-    </Menu>
+    <>
+      <Menu theme="dark" mode="horizontal">
+        <h1>Gamified Goals</h1>
+        <Item
+          key="home"
+          onClick={() => navigate("/")}
+          icon={<HomeOutlined style={{ fontSize: "1.8em", color: "ffddf5" }} />}
+        />
+        <Item
+          key="Logout"
+          onClick={handleSignOut}
+          icon={<LogoutOutlined style={{ fontSize: "1.8em" }} />}
+        />
+      </Menu>
+    </>
   );
 }

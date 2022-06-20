@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { List, Checkbox } from "antd";
 import { UserContext } from "../App";
+import { Button } from "antd";
 
 export default function Task({ item, setTasks, setLoading }) {
   const { user } = useContext(UserContext);
@@ -35,6 +36,30 @@ export default function Task({ item, setTasks, setLoading }) {
         setLoading(false);
       });
   };
+
+  const handleTaskDelete = () => {
+    setLoading(true);
+    fetch(`https://firestore-express-jbp.web.app/tasks/delete/${item.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ done: !item.done }),
+    })
+      .then(() => {
+        // THEN: fetch our tasks
+        fetch(`https://firestore-express-jbp.web.app/tasks/${user.uid}`)
+          .then((response) => response.json())
+          .then((data) => {
+            setTasks(data);
+            setLoading(false);
+          });
+      })
+      .catch((err) => {
+        alert(err);
+        setLoading(false);
+      });
+  };
   return (
     <>
       <List.Item style={itemStyle}>
@@ -45,6 +70,7 @@ export default function Task({ item, setTasks, setLoading }) {
         >
           {item.task}
         </Checkbox>
+        <Button onClick={handleTaskDelete}>Delete Task</Button>
       </List.Item>
     </>
   );
