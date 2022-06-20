@@ -25,12 +25,21 @@ export default function Homepage() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/340px-Stick_Figure.svg.png"
             alt="Stick figure"
           />
+        ) : level === 2 ? (
+          <img
+            src="https://thumbs.dreamstime.com/b/concept-art-digital-painting-illustration-fantasy-villager-village-man-miner-countryman-back-basket-pack-coal-stones-135018752.jpg"
+            alt="villager"
+          />
         ) : (
           <img
             src="https://i.pinimg.com/originals/48/9d/83/489d830eff9d5389e6712cad0f96e003.jpg"
             alt="dwarf"
           />
         )}
+        {/* <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkF7sfIsCpoazLfaoUolQvPTRAuUwoUo2_RA&usqp=CAU"
+            alt="rpg character cleric"
+          /> */}
       </section>
       <h2> Character Level: {level}</h2>
       <h2>Experience for this level {`${expGainedForThisLevel}xp / 500 xp`}</h2>
