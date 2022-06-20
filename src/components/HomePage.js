@@ -2,6 +2,7 @@ import { useState } from "react";
 import TaskList from "./TaskList";
 import NewTask from "./NewTask";
 import ProgressBar from "./ProgressBar";
+import ExpBar from "./ExpBar";
 
 export default function Homepage() {
   const [tasks, setTasks] = useState([]);
@@ -9,8 +10,9 @@ export default function Homepage() {
   const numOfTasks = tasks.length;
   const numOfTasksCompleted = tasks.filter((task) => task.done).length;
   const totalCharacterExp = numOfTasksCompleted * 100;
-  const level = 1 + Math.floor(totalCharacterExp / 500);
-  const expGainedForThisLevel = totalCharacterExp % 500;
+  const level = 1 + Math.floor(totalCharacterExp / 300);
+  const expGainedForThisLevel = totalCharacterExp % 300;
+  const percentageExpGainedForThisLevel = expGainedForThisLevel / 3;
   // const totalCoinsEarned = totalCharacterExp;
   // const totalCoinsSpent =
   // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
@@ -55,7 +57,10 @@ export default function Homepage() {
           /> */}
           <h2> Character Level: {level}</h2>
           <h2>Experience for this level:</h2>
-          <h2>{`${expGainedForThisLevel}xp / 500 xp`}</h2>
+          <h2>{`${expGainedForThisLevel}xp / 300 xp`}</h2>
+          <ExpBar
+            percentageExpGainedForThisLevel={percentageExpGainedForThisLevel}
+          />
         </section>
       </div>
       <br />
