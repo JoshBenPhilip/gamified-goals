@@ -25,7 +25,7 @@ export default function Homepage() {
         background: "white",
         padding: "0 40px 40px",
         display: "flex",
-        alignSelf: "center",
+        justifyContent: "center",
       }}
     >
       <div>
@@ -54,11 +54,12 @@ export default function Homepage() {
             alt="rpg character cleric"
           /> */}
           <h2> Character Level: {level}</h2>
-          <h2>
-            Experience for this level {`${expGainedForThisLevel}xp / 500 xp`}
-          </h2>
+          <h2>Experience for this level:</h2>
+          <h2>{`${expGainedForThisLevel}xp / 500 xp`}</h2>
         </section>
       </div>
+      <br />
+      <br />
       <div>
         <h2>Goal: Become a software engineer</h2>
         <ProgressBar
