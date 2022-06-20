@@ -21,10 +21,10 @@ export default function Homepage() {
 
   return (
     <section style={{ background: "white", padding: "0 40px 40px" }}>
-      <section className="flex-container" maxheight="10rem" maxwidth="10rem">
+      <section className="flex-container">
         {level === 1 ? (
           <img
-            maxheight="500rem"
+            height="500rem"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/340px-Stick_Figure.svg.png"
             alt="Stick figure"
           />

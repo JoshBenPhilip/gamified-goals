@@ -47,7 +47,10 @@ export default function Login() {
   }, [user]);
 
   return (
-    <section className="flex-container" style={{ padding: "10em" }}>
+    <section
+      className="flex-container"
+      style={{ padding: "10em", background: "white" }}
+    >
       <Form
         onFinish={handleLogin}
         labelCol={{ span: 8 }}
@@ -74,13 +77,6 @@ export default function Login() {
           />
           <Button onClick={handleGoogleLogin}>Google Login</Button>
         </Form.Item>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </Form>
     </section>
   );
