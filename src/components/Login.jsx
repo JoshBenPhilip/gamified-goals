@@ -47,7 +47,7 @@ export default function Login() {
   }, [user]);
 
   return (
-    <section style={{ padding: "2em" }}>
+    <section className="flex-container" style={{ padding: "10em" }}>
       <Form
         onFinish={handleLogin}
         labelCol={{ span: 8 }}
@@ -67,7 +67,8 @@ export default function Login() {
         </Form.Item> */}
         <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
           <img
-            flexbox={"justify content"}
+            className="flex-container"
+            height="500rem"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkF7sfIsCpoazLfaoUolQvPTRAuUwoUo2_RA&usqp=CAU"
             alt="rpg character cleric"
           />

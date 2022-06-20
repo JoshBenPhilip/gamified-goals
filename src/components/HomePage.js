@@ -21,19 +21,22 @@ export default function Homepage() {
 
   return (
     <section style={{ background: "white", padding: "0 40px 40px" }}>
-      <section>
+      <section className="flex-container" maxheight="10rem" maxwidth="10rem">
         {level === 1 ? (
           <img
+            maxheight="500rem"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/340px-Stick_Figure.svg.png"
             alt="Stick figure"
           />
         ) : level === 2 ? (
           <img
-            src="https://thumbs.dreamstime.com/b/concept-art-digital-painting-illustration-fantasy-villager-village-man-miner-countryman-back-basket-pack-coal-stones-135018752.jpg"
+            height="500rem"
+            src="https://i.pinimg.com/originals/1d/54/3e/1d543e5429b6fe1e33cb81ff61d91ca7.jpg"
             alt="villager"
           />
         ) : (
           <img
+            height="500rem"
             src="https://i.pinimg.com/originals/48/9d/83/489d830eff9d5389e6712cad0f96e003.jpg"
             alt="dwarf"
           />
