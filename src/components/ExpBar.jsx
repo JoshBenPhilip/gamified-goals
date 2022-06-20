@@ -4,7 +4,7 @@ export default function ExpBar({ expGainedForThisLevel }) {
   return (
     <>
       <p>Character Experience</p>
-      <Progress percent={expGainedForThisLevel} />
+      <Progress={expGainedForThisLevel} />
     </>
   );
 }
