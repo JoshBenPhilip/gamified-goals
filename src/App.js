@@ -33,7 +33,6 @@ export default function App() {
         <Layout className="layout">
           <Header>
             <Menubar />
-            <Header>GAMIFIED GOALS</Header>
           </Header>
           <Content>
             <Routes>

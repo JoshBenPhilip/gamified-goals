@@ -30,7 +30,7 @@ export default function Menubar() {
         <Item
           key="home"
           onClick={() => navigate("/")}
-          icon={<HomeOutlined style={{ fontSize: "1.8em", color: "ffddf5" }} />}
+          icon={<HomeOutlined style={{ fontSize: "1.8em" }} />}
         />
         <Item
           key="Logout"

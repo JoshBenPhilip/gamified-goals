@@ -6,7 +6,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
 } from "firebase/auth";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Space } from "antd";
 import { UserContext } from "../App";
 
 // const firebaseConfig = {
@@ -67,11 +67,19 @@ export default function Login() {
         </Form.Item> */}
         <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
           <img
+            flexbox={"justify content"}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkF7sfIsCpoazLfaoUolQvPTRAuUwoUo2_RA&usqp=CAU"
             alt="rpg character cleric"
           />
           <Button onClick={handleGoogleLogin}>Google Login</Button>
         </Form.Item>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </Form>
     </section>
   );

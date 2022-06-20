@@ -2,7 +2,6 @@ import { useState } from "react";
 import TaskList from "./TaskList";
 import NewTask from "./NewTask";
 import ProgressBar from "./ProgressBar";
-import ExpBar from "./ExpBar";
 
 export default function Homepage() {
   const [tasks, setTasks] = useState([]);
@@ -12,6 +11,9 @@ export default function Homepage() {
   const totalCharacterExp = numOfTasksCompleted * 100;
   const level = 1 + Math.floor(totalCharacterExp / 500);
   const expGainedForThisLevel = totalCharacterExp % 500;
+  // const totalCoinsEarned = totalCharacterExp;
+  // const totalCoinsSpent =
+  // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
   // console.log(numOfTasks);
   console.log({ totalCharacterExp, level, expGainedForThisLevel });
 
