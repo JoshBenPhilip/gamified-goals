@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TaskList from "./TaskList";
 import NewTask from "./NewTask";
-
 import ProgressBar from "./ProgressBar";
+import ExpBar from "./ExpBar";
 
 export default function Homepage() {
   const [tasks, setTasks] = useState([]);
@@ -19,8 +19,23 @@ export default function Homepage() {
 
   return (
     <section style={{ background: "white", padding: "0 40px 40px" }}>
-      <h2>Goal: Become a software engineer</h2>
+      <section>
+        {level === 1 ? (
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/340px-Stick_Figure.svg.png"
+            alt="Stick figure"
+          />
+        ) : (
+          <img
+            src="https://i.pinimg.com/originals/48/9d/83/489d830eff9d5389e6712cad0f96e003.jpg"
+            alt="dwarf"
+          />
+        )}
+      </section>
+      <h2> Character Level: {level}</h2>
+      <h2>Experience for this level {`${expGainedForThisLevel}xp / 500 xp`}</h2>
       <br />
+      <h2>Goal: Become a software engineer</h2>
       <ProgressBar
         totalGoalProgress={Math.round((numOfTasksCompleted * 100) / numOfTasks)}
       />
