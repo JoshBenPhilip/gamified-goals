@@ -13,7 +13,7 @@ export default function Homepage() {
   const level = 1 + Math.floor(totalCharacterExp / 300);
   const expGainedForThisLevel = totalCharacterExp % 300;
   const percentageExpGainedForThisLevel = Math.floor(expGainedForThisLevel / 3);
-  // const totalCoinsEarned = totalCharacterExp;
+  const totalCoinsEarned = totalCharacterExp;
   // const totalCoinsSpent =
   // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
   // console.log(numOfTasks);
