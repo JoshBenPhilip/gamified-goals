@@ -12,7 +12,7 @@ export default function Homepage() {
   const totalCharacterExp = numOfTasksCompleted * 100;
   const level = 1 + Math.floor(totalCharacterExp / 300);
   const expGainedForThisLevel = totalCharacterExp % 300;
-  const percentageExpGainedForThisLevel = expGainedForThisLevel / 3;
+  const percentageExpGainedForThisLevel = Math.floor(expGainedForThisLevel / 3);
   // const totalCoinsEarned = totalCharacterExp;
   // const totalCoinsSpent =
   // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
@@ -58,9 +58,9 @@ export default function Homepage() {
           <h2> Character Level: {level}</h2>
           <h2>Experience for this level:</h2>
           <h2>{`${expGainedForThisLevel}xp / 300 xp`}</h2>
-          <ExpBar
+          {/* <ExpBar
             percentageExpGainedForThisLevel={percentageExpGainedForThisLevel}
-          />
+          /> */}
         </section>
       </div>
       <br />
