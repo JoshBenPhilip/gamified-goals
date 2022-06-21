@@ -49,12 +49,16 @@ export default function Login() {
   return (
     <section
       className="flex-container"
-      style={{ padding: "10em", background: "white" }}
+      style={{
+        padding: "10em",
+        background: "white",
+      }}
     >
       <Form
         onFinish={handleLogin}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
+        style={{ background: "white" }}
       >
         {/* <Form.Item
           label="Email"
@@ -69,6 +73,14 @@ export default function Login() {
           </Button>
         </Form.Item> */}
         <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
+          <h2
+            className="title"
+            style={{
+              fontSize: "4em",
+            }}
+          >
+            Gamified Goals
+          </h2>
           <img
             className="flex-container"
             height="500rem"
