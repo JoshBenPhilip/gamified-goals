@@ -152,6 +152,56 @@ export default function Login() {
           </Form.Item>
         </Form>
       </section>
+      <section
+        className="flex-container"
+        style={{
+          padding: "10em",
+          background: "white",
+        }}
+      >
+        <Form
+          onFinish={handleLogin}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+          style={{ background: "white" }}
+        >
+          {/* <Form.Item
+          label="Email"
+          name="email"
+          rules={[{ required: true, message: "Please enter a valid email" }]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
+          <Button type="primary" htmlType="submit">
+            Login
+          </Button>
+        </Form.Item> */}
+          <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
+            <h2
+              className="title"
+              style={{
+                fontSize: "4em",
+              }}
+            >
+              GAME START
+            </h2>
+            <img
+              className="flex-container"
+              height="500rem"
+              src="https://i.pinimg.com/564x/61/74/50/61745016c90d1a687dfd0c1e693c9e99.jpg"
+              alt="rpg character rouge"
+            />
+            <h2
+              style={{
+                fontSize: "2em",
+              }}
+            >
+              Win
+            </h2>
+          </Form.Item>
+        </Form>
+      </section>
     </div>
   );
 }
