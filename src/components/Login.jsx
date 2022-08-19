@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { Button, Form, Input, Space } from "antd";
 import { UserContext } from "../App";
+import "../../App.css";
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBrTbTLdYjniZeZAfVBLfYoqM2S9dqDHgU",
@@ -47,19 +48,19 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div style={{ display: "flex", background: "white" }}>
+    <div style={{ display: "flex", background: "blue" }}>
       <section
         className="flex-container"
         style={{
           padding: "10em",
-          background: "white",
+          background: "blue",
         }}
       >
         <Form
           onFinish={handleLogin}
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 16 }}
-          style={{ background: "white" }}
+          style={{ background: "blue" }}
         >
           {/* <Form.Item
           label="Email"
@@ -103,7 +104,7 @@ export default function Login() {
         className="flex-container"
         style={{
           padding: "10em",
-          background: "white",
+          background: "blue",
         }}
       >
         <Form
