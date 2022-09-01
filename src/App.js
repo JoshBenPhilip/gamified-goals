@@ -6,18 +6,18 @@ import Login from "./components/Login";
 import Menubar from "./components/Menubar";
 import { connectAuth } from "./connectAuth";
 
-const styles = {
-  header: {
-    position: "fixed",
-    zIndex: 10,
-    width: "100%",
-    color: "white",
-  },
-  content: {
-    padding: "0 50px",
-    marginTop: 64,
-  },
-};
+// const styles = {
+//   header: {
+//     position: "fixed",
+//     zIndex: 10,
+//     width: "100%",
+//     color: "white",
+//   },
+//   content: {
+//     padding: "0 50px",
+//     marginTop: 64,
+//   },
+// };
 
 const { Header, Content } = Layout;
 
@@ -34,7 +34,7 @@ export default function App() {
           <Header>
             <Menubar />
           </Header>
-          <Content>
+          <Content className="background">
             <Routes>
               {/* <Route path="/" element={<HomePage />} /> */}
               <Route path="/login" element={<Login />} />

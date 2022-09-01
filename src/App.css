@@ -1,5 +1,6 @@
 .App { 
   text-align: center;
+  background-color: "#8585ff";
 }
 
 .App-logo {
@@ -40,3 +41,10 @@
 body {
   background-image: url("https://wallpaperaccess.com/full/381005.jpg");
 } 
+
+.background {
+  display: flex;
+  background: #8585ff;
+  align-items: center;
+}
+
