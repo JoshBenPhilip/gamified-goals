@@ -1,13 +1,15 @@
-background {
-  display: flex;
-  background: #8585ff;
-  align-items: center;
-}
-
 .title {
+  display: flex;
   font-size: "100em";
 }
 
 button {
   justify-content: center;
+}
+
+.background {
+  background-image: url("https://wallpaperaccess.com/full/381005.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  size: 100vh;
 }

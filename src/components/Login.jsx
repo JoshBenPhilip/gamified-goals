@@ -39,7 +39,7 @@ export default function Login() {
 
   // The actual visuals
   return (
-    <background>
+    <div className="background">
       <h2 className="title">GAMIFIED GOALS</h2>
       <h2 className="title">Gamify Your Goals</h2>
       <div>
@@ -71,6 +71,6 @@ export default function Login() {
           </Button>
         </Form.Item>
       </Form>
-    </background>
+    </div>
   );
 }
