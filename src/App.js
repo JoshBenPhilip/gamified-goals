@@ -2,7 +2,8 @@ import { Layout } from "antd";
 import { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import Login from "./components/Login";
+// import Login from "./components/Login";
+import Login2 from "./components/Login2";
 import Menubar from "./components/Menubar";
 import { connectAuth } from "./connectAuth";
 import "./App.css";
@@ -25,8 +26,9 @@ export default function App() {
           <Content>
             <Routes>
               {/* <Route path="/" element={<HomePage />} /> */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/" element={!user ? <Login /> : <HomePage />} />
+              {/* <Route path="/login" element={<Login />} /> */}
+              <Route path="/login" element={<Login2 />} />
+              <Route path="/" element={!user ? <Login2 /> : <HomePage />} />
             </Routes>
           </Content>
         </Layout>
