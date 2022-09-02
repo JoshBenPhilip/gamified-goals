@@ -8,8 +8,10 @@ button {
 }
 
 .background {
+  display: "flex";
   background-image: url("https://wallpaperaccess.com/full/381005.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  justify-content: "center";
   size: 100vh;
 }
