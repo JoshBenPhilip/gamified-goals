@@ -7,20 +7,22 @@
   font-size: large;
 } */
 
-/* body {
-  display: flex;
+body {
+  /* display: flex; */
   background-color: white;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: contain;
-} */
-/* 
+}
+
 .background {
   display: flex;
   align-items: center;
-} */
+  height: 100vh;
+}
 
-.layout {
+/* .layout {
   background-color: yellow;
   display: flex;
-  size: 100vh;
-}
+  height: 100vh;
+  width: auto;
+} */

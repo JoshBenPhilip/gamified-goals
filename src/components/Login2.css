@@ -1,10 +1,15 @@
 .title {
   display: flex;
   font-size: "100em";
+  z-index: 100;
+  color: black;
+  justify-content: center;
 }
 
-button {
+.googleLogin {
   justify-content: center;
+  align-items: center;
+  margin: 0%;
 }
 
 .background {
@@ -12,7 +17,24 @@ button {
   background-image: url("https://wallpaperaccess.com/full/381005.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  justify-content: "center";
   height: 100vh;
   width: 100vw;
+  background-position: 10% 80%;
+  z-index: 98;
+  flex-direction: column;
+}
+
+/* .background {
+  display: "flex";
+  background-image: url(https://wallpaperaccess.com/full/381005.jpg);
+  background-size: 100%;
+  size: 100%;
+  background-repeat: no-repeat;
+  justify-content: "center";
+  height: 100%;
+  width: 100%;
+  background-position: 100% 50%;
+} */
+
+.loginSection {
 }

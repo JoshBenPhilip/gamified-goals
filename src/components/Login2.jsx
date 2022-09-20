@@ -39,10 +39,19 @@ export default function Login() {
 
   // The actual visuals
   return (
-    <div className="background">
-      <Button type="primary" onClick={handleGoogleLogin}>
-        Google Login
-      </Button>
-    </div>
+    <>
+      <div className="background">
+        <loginSection>
+          <h1 className="title">GAMIFIED GOALS</h1>
+          <Button
+            type="primary"
+            className="googleLogin"
+            onClick={handleGoogleLogin}
+          >
+            Google Login
+          </Button>
+        </loginSection>
+      </div>
+    </>
   );
 }

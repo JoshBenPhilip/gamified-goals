@@ -19,10 +19,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser, connectAuth }}>
-        <Layout className="layout">
-          <Header>
-            <Menubar />
-          </Header>
+        <Layout /*className="layout"*/>
+          {/* <Header> */}
+          <Menubar />
+          {/* </Header> */}
           <Content>
             <Routes>
               {/* <Route path="/" element={<HomePage />} /> */}

@@ -1,0 +1,16 @@
+.homepage {
+  background-color: white;
+  padding: 0 40px 40px;
+  display: flex;
+  justify-content: "center";
+  height: 100%;
+  flex-direction: column;
+}
+
+.imageCarosel {
+  display: flex;
+  height: 30vh;
+}
+
+.mainContainer {
+}
