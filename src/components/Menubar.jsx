@@ -1,12 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu } from "antd";
-import {
-  PlusCircleOutlined,
-  QuestionCircleOutlined,
-  HomeOutlined,
-  LogoutOutlined,
-} from "@ant-design/icons";
+import { HomeOutlined, LogoutOutlined } from "@ant-design/icons";
 import { signOut } from "firebase/auth";
 import { UserContext } from "../App";
 

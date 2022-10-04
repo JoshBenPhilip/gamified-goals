@@ -1,42 +1,28 @@
 /* .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;f
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+  background-color: "#8585ff";
+} */
+/* 
 .title {
   font-size: large;
 } */
 
 body {
-  background-image: url("https://wallpaperaccess.com/full/381005.jpg");
+  /* display: flex; */
+  background-color: white;
+  background-repeat: repeat;
+  background-size: contain;
 }
+
+.background {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+/* .layout {
+  background-color: yellow;
+  display: flex;
+  height: 100vh;
+  width: auto;
+} */
