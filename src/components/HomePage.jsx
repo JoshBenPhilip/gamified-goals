@@ -59,8 +59,8 @@ export default function Homepage() {
             <h2>Experience for this level:</h2>
             <h2>{`${expGainedForThisLevel}xp / 300 xp`}</h2>
             {/* <ExpBar
-            percentageExpGainedForThisLevel={percentageExpGainedForThisLevel}
-          /> */}
+              percentageExpGainedForThisLevel={percentageExpGainedForThisLevel}
+            /> */}
           </section>
         </div>
         <br />
