@@ -41,8 +41,9 @@ export default function Login() {
   return (
     <>
       <div className="background">
-        <loginSection>
-          <h1 className="title">GAMIFIED GOALS</h1>
+        <loginSection className="login-section">
+          <h1 className="title">GAMIFIED</h1>
+          <h1 className="title">GOALS</h1>
           <Button
             type="primary"
             className="googleLogin"
