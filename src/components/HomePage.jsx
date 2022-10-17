@@ -31,14 +31,15 @@ export default function Homepage() {
       <section className="homepage">
         <div>
           <section>
-            {level === 1 ? (
+            {/* {level === 1 ? (
               <img
                 className="imageCarosel"
                 // height="500rem"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/340px-Stick_Figure.svg.png"
                 alt="Stick figure"
               />
-            ) : level === 2 ? (
+            ) :  */}
+            {level === 1 ? (
               <img
                 className="imageCarosel"
                 // height="500rem"
