@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { List } from "antd";
-import Task from "./Task.js";
+import Task from "./Task.jsx";
 import { UserContext } from "../App.js";
 
 export default function TaskList({ tasks, setTasks, loading, setLoading }) {
