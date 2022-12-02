@@ -66,14 +66,15 @@ export default function Homepage() {
         <br />
         <br />
         <div>
-          <h2>Goal: Become a software engineer</h2>
-          <ProgressBar
-            totalGoalProgress={Math.round(
-              (numOfTasksCompleted * 100) / numOfTasks
-            )}
-          />
-          <h2>Tasks To Achieve Goal:</h2>
-
+          <div className="divtest">
+            <h2>Goal: Become a software engineer</h2>
+            <ProgressBar
+              totalGoalProgress={Math.round(
+                (numOfTasksCompleted * 100) / numOfTasks
+              )}
+            />
+            <h2>Tasks To Achieve Goal:</h2>
+          </div>
           <NewTask setTasks={setTasks} setLoading={setLoading} />
           <TaskList
             tasks={tasks}
