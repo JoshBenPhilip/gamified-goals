@@ -30,8 +30,8 @@ export default function TaskList({ tasks, setTasks, loading, setLoading }) {
           justifyContent: "center",
         }}
       >
-        Show Completed Tasks?
-        <ShowCompletedTasksToggle></ShowCompletedTasksToggle>
+        {/* Show Completed Tasks? */}
+        {/* <ShowCompletedTasksToggle></ShowCompletedTasksToggle> */}
       </label>
       <List
         loading={loading}
@@ -39,9 +39,12 @@ export default function TaskList({ tasks, setTasks, loading, setLoading }) {
         size="large"
         bordered
         renderItem={(item) => (
+          // add a conditional, if Toggle is true show task
           <Task item={item} setLoading={setLoading} setTasks={setTasks} />
         )}
       />
     </>
   );
 }
+
+// Props Context
