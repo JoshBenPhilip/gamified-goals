@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react";
 import { List } from "antd";
+import { ShowCompletedTasksToggle } from "./Task.jsx";
 import Task from "./Task.jsx";
 import { UserContext } from "../App.js";
 
@@ -22,14 +23,28 @@ export default function TaskList({ tasks, setTasks, loading, setLoading }) {
   }, []);
 
   return (
-    <List
-      loading={loading}
-      dataSource={tasks}
-      size="large"
-      bordered
-      renderItem={(item) => (
-        <Task item={item} setLoading={setLoading} setTasks={setTasks} />
-      )}
-    />
+    <>
+      <label
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        {/* Show Completed Tasks? */}
+        {/* <ShowCompletedTasksToggle></ShowCompletedTasksToggle> */}
+      </label>
+      <List
+        loading={loading}
+        dataSource={tasks}
+        size="large"
+        bordered
+        renderItem={(item) => (
+          // add a conditional, if Toggle is true show task
+          <Task item={item} setLoading={setLoading} setTasks={setTasks} />
+        )}
+      />
+    </>
   );
 }
+
+// Props Context

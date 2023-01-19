@@ -1,7 +1,20 @@
-import { useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { List, Checkbox } from "antd";
 import { UserContext } from "../App";
 import { Button } from "antd";
+import { Switch } from "antd";
+
+export const ShowCompletedTaskToggleContext = createContext(null);
+//The line below is to create a value and a value setter to later have the Tasks List check and only render tasks where completed = false when ShowCompletedTasksToggle is = false
+
+const onChangeAction = (checked) => {
+  console.log(`switch to ${checked}`);
+};
+
+export const ShowCompletedTasksToggle = () => {
+  const [showCompletedTasks, setShowCompletedTasks] = useState({});
+  return <Switch defaultChecked onChange={onChangeAction} />;
+};
 
 export default function Task({ item, setTasks, setLoading }) {
   const { user } = useContext(UserContext);
