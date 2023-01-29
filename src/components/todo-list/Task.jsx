@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { List, Checkbox } from "antd";
-import { UserContext } from "../App";
+import { UserContext } from "../../App";
 import { Button } from "antd";
 import { Switch } from "antd";
 

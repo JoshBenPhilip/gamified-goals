@@ -1,9 +1,9 @@
 import { Layout } from "antd";
 import { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import Login2 from "./components/Login2";
-import Menubar from "./components/Menubar";
+import HomePage from "./pages/home-page/HomePage";
+import Login2 from "./pages/login-page/Login2";
+import Menubar from "./components/navigation/Menubar";
 import { connectAuth } from "./connectAuth";
 import "./App.css";
 

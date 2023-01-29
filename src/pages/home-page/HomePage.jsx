@@ -1,11 +1,11 @@
 import { useState } from "react";
-import TaskList from "./TaskList";
-import NewTask from "./NewTask";
-import ProgressBar from "./ProgressBar";
-import ExpBar from "./ExpBar";
+import TaskList from "../../components/todo-list/TaskList";
+import NewTask from "../../components/todo-list/NewTask";
+import ProgressBar from "../../components/game-elements/ProgressBar";
+import ExpBar from "../../components/game-elements/ExpBar";
 import "./HomePage.css";
 
-export default function Homepage() {
+export default function HomePage() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState([]);
   const [incompleteTasks, setIncompleteTasks] = useState([]);
