@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import { useState, useContext } from "react";
-import { UserContext } from "../App";
+import { UserContext } from "../../App";
 
 export default function NewTask({ setTasks, setLoading }) {
   const { user } = useContext(UserContext);

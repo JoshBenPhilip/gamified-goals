@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Menu } from "antd";
 import { HomeOutlined, LogoutOutlined } from "@ant-design/icons";
 import { signOut } from "firebase/auth";
-import { UserContext } from "../App";
+import { UserContext } from "../../App";
 
 const { Item } = Menu;
 
