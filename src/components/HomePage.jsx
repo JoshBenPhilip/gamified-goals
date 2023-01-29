@@ -8,6 +8,7 @@ import "./HomePage.css";
 export default function Homepage() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState([]);
+  const [incompleteTasks, setIncompleteTasks] = useState([]);
   const numOfTasks = tasks.length;
   const numOfTasksCompleted = tasks.filter((task) => task.done).length;
   const totalCharacterExp = numOfTasksCompleted * 100;
@@ -18,10 +19,10 @@ export default function Homepage() {
   // const totalCoinsSpent =
   // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
   // console.log(numOfTasks);
-  console.log({ totalCharacterExp, level, expGainedForThisLevel });
+  // console.log({ totalCharacterExp, level, expGainedForThisLevel });
 
   // const numOfTasksCompleted = tasksCompleted.length;
-
+  // console.log(tasks);
   return (
     <section className="mainContainer">
       <h2>
@@ -79,9 +80,12 @@ export default function Homepage() {
           <TaskList
             tasks={tasks}
             setTasks={setTasks}
+            incompleteTasks={incompleteTasks}
+            setIncompleteTasks={setIncompleteTasks}
             loading={loading}
             setLoading={setLoading}
           />
+
           <br />
         </div>
       </section>

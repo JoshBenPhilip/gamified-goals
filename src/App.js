@@ -13,7 +13,7 @@ export const UserContext = createContext(null);
 
 export default function App() {
   const [user, setUser] = useState(null);
-  console.log(user);
+  // console.log(user);
 
   return (
     <BrowserRouter>

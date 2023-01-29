@@ -4,15 +4,31 @@ import { UserContext } from "../App";
 import { Button } from "antd";
 import { Switch } from "antd";
 
-export const ShowCompletedTaskToggleContext = createContext(null);
+////my attempt at passing state from this file to any other file that imports it.
+// export const [
+//   showCompletedTaskToggleContext,
+//   setShowCompletedTaskToggleContext,
+// ] = useState({});
+
 //The line below is to create a value and a value setter to later have the Tasks List check and only render tasks where completed = false when ShowCompletedTasksToggle is = false
 
-const onChangeAction = (checked) => {
-  console.log(`switch to ${checked}`);
-};
+//onChangeAction. onChangeAction currently console.logs switch to true or false depending on if the toggle's value is true or false.
 
-export const ShowCompletedTasksToggle = () => {
-  const [showCompletedTasks, setShowCompletedTasks] = useState({});
+//onChangeAction. onChangeAction currently console.logs switch to true or false depending on if the toggle's value is true or false.
+// const onChangeAction = (checked) => {
+// ShowCompletedTaskToggleContext = checked;
+// console.log(`switch to ${ShowCompletedTaskToggleContext}`);
+// };
+
+//Working toggle that on change calls the function onChangeAction. onChangeAction currently console.logs switch to true or false depending on the toggle, Switch is an AntD component.
+export const ShowCompletedTasksToggle = ({
+  setShowIncompleteTasks,
+  showIncompleteTasks,
+}) => {
+  const onChangeAction = () => {
+    setShowIncompleteTasks(!showIncompleteTasks);
+  };
+
   return <Switch defaultChecked onChange={onChangeAction} />;
 };
 
