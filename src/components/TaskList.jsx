@@ -2,10 +2,11 @@ import { useEffect, useContext } from "react";
 import { List } from "antd";
 import {
   ShowCompletedTasksToggle,
-  ShowCompletedTaskToggleContext,
+  // ShowCompletedTaskToggleContext,
 } from "./Task.jsx";
 import Task from "./Task.jsx";
 import { UserContext } from "../App.js";
+import { useState } from "react";
 
 export default function TaskList({
   tasks,
@@ -17,7 +18,8 @@ export default function TaskList({
 }) {
   // eslint-disable-next-line
   const { user } = useContext(UserContext);
-  let TasksToShow;
+  const [showIncompleteTasks, setShowIncompleteTasks] = useState(false);
+
   useEffect(() => {
     //GET DATA FROM API
     setLoading(true);
@@ -38,11 +40,11 @@ export default function TaskList({
   }, []);
   // console.log(incompleteTasks);
   // console.log(tasks);
-  if ((ShowCompletedTaskToggleContext = true)) {
-    let TasksToShow = tasks;
-  } else if ((ShowCompletedTaskToggleContext = false)) {
-    let TasksToShow = incompleteTasks;
-  }
+  // if ((ShowCompletedTaskToggleContext = true)) {
+  //   let TasksToShow = tasks;
+  // } else if ((ShowCompletedTaskToggleContext = false)) {
+  //   let TasksToShow = incompleteTasks;
+  // }
   return (
     <>
       <label
@@ -52,19 +54,38 @@ export default function TaskList({
         }}
       >
         Show Completed Tasks?
-        <ShowCompletedTasksToggle></ShowCompletedTasksToggle>
+        <ShowCompletedTasksToggle
+          showIncompleteTasks={showIncompleteTasks}
+          setShowIncompleteTasks={setShowIncompleteTasks}
+        ></ShowCompletedTasksToggle>
       </label>
-      <List
-        loading={loading}
-        dataSource={TasksToShow}
-        size="large"
-        bordered
-        renderItem={(item) => (
-          // add a conditional, if Toggle is true show task
+      {!showIncompleteTasks ? (
+        <List
+          loading={loading}
+          // dataSource={TasksToShow}
+          dataSource={tasks}
+          size="large"
+          bordered
+          renderItem={(item) => (
+            // add a conditional, if Toggle is true show task
 
-          <Task item={item} setLoading={setLoading} setTasks={setTasks} />
-        )}
-      />
+            <Task item={item} setLoading={setLoading} setTasks={setTasks} />
+          )}
+        />
+      ) : (
+        <List
+          loading={loading}
+          // dataSource={TasksToShow}
+          dataSource={incompleteTasks}
+          size="large"
+          bordered
+          renderItem={(item) => (
+            // add a conditional, if Toggle is true show task
+
+            <Task item={item} setLoading={setLoading} setTasks={setTasks} />
+          )}
+        />
+      )}
     </>
   );
 }
