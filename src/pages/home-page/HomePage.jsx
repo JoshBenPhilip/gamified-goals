@@ -3,26 +3,32 @@ import TaskList from "../../components/todo-list/TaskList";
 import NewTask from "../../components/todo-list/NewTask";
 import ProgressBar from "../../components/game-elements/ProgressBar";
 import ExpBar from "../../components/game-elements/ExpBar";
+import useGameLogic from "../../components/game-elements/useGameLogic";
 import "./HomePage.css";
 
 export default function HomePage() {
   const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState([]);
-  const [incompleteTasks, setIncompleteTasks] = useState([]);
-  const numOfTasks = tasks.length;
-  const numOfTasksCompleted = tasks.filter((task) => task.done).length;
-  const totalCharacterExp = numOfTasksCompleted * 100;
-  const level = 1 + Math.floor(totalCharacterExp / 300);
-  const expGainedForThisLevel = totalCharacterExp % 300;
-  const percentageExpGainedForThisLevel = Math.floor(expGainedForThisLevel / 3);
-  const totalCoinsEarned = totalCharacterExp;
-  // const totalCoinsSpent =
-  // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
-  // console.log(numOfTasks);
-  // console.log({ totalCharacterExp, level, expGainedForThisLevel });
+  const gameLogic = useGameLogic(tasks);
 
-  // const numOfTasksCompleted = tasksCompleted.length;
-  // console.log(tasks);
+  // const [loading, setLoading] = useState([]);
+  // const [incompleteTasks, setIncompleteTasks] = useState([]);
+  // const numOfTasks = tasks.length;
+  // const numOfTasksCompleted = tasks.filter((task) => task.done).length;
+  // const totalCharacterExp = numOfTasksCompleted * 100;
+  // const level = 1 + Math.floor(totalCharacterExp / 300);
+  // const expGainedForThisLevel = totalCharacterExp % 300;
+  // const percentageExpGainedForThisLevel = Math.floor(expGainedForThisLevel / 3);
+  // const totalCoinsEarned = totalCharacterExp;
+  // const totalGoalProgress = Math.round(
+  //   (numOfTasksCompleted * 100) / numOfTasks
+  // );
+  // // const totalCoinsSpent =
+  // // const totalCoinsNotSpent = totalCoinsEarned - totalCoinsSpent;
+  // // console.log(numOfTasks);
+  // // console.log({ totalCharacterExp, level, expGainedForThisLevel });
+
+  // // const numOfTasksCompleted = tasksCompleted.length;
+  // // console.log(tasks);
   return (
     <section className="mainContainer">
       <h2>
@@ -32,7 +38,7 @@ export default function HomePage() {
       <section className="homepage">
         <div>
           <section>
-            {/* {level === 1 ? (
+            {/* {gameLogic.level === 1 ? (
               <img
                 className="imageCarosel"
                 // height="500rem"
@@ -40,7 +46,7 @@ export default function HomePage() {
                 alt="Stick figure"
               />
             ) :  */}
-            {level === 1 ? (
+            {gameLogic.level === 1 ? (
               <img
                 className="imageCarosel"
                 // height="500rem"
@@ -56,11 +62,11 @@ export default function HomePage() {
               />
             )}
 
-            <h2> Character Level: {level}</h2>
+            <h2> Character Level: {gameLogic.level}</h2>
             <h2>Experience for this level:</h2>
-            <h2>{`${expGainedForThisLevel}xp / 300 xp`}</h2>
+            <h2>{`${gameLogic.expGainedForThisLevel}xp / 300 xp`}</h2>
             {/* <ExpBar
-              percentageExpGainedForThisLevel={percentageExpGainedForThisLevel}
+              percentageExpGainedForThisLevel={gameLogic.percentageExpGainedForThisLevel}
             /> */}
           </section>
         </div>
@@ -69,21 +75,17 @@ export default function HomePage() {
         <div>
           <div className="divtest">
             <h2>Goal: Become a software engineer</h2>
-            <ProgressBar
-              totalGoalProgress={Math.round(
-                (numOfTasksCompleted * 100) / numOfTasks
-              )}
-            />
+            <ProgressBar totalGoalProgress={gameLogic.totalGoalProgress} />
             <h2>Tasks To Achieve Goal:</h2>
           </div>
-          <NewTask setTasks={setTasks} setLoading={setLoading} />
+          <NewTask setTasks={setTasks} setLoading={gameLogic.setLoading} />
           <TaskList
             tasks={tasks}
             setTasks={setTasks}
-            incompleteTasks={incompleteTasks}
-            setIncompleteTasks={setIncompleteTasks}
-            loading={loading}
-            setLoading={setLoading}
+            incompleteTasks={gameLogic.incompleteTasks}
+            setIncompleteTasks={gameLogic.setIncompleteTasks}
+            loading={gameLogic.loading}
+            setLoading={gameLogic.setLoading}
           />
 
           <br />
