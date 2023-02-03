@@ -18,6 +18,7 @@
 .imageCarosel {
   display: flex;
   height: 30vh;
+  mix-blend-mode: multiply color-burn;
 }
 
 .mainContainer {
