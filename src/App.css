@@ -1,14 +1,4 @@
-/* .App {
-  text-align: center;
-  background-color: "#8585ff";
-} */
-/* 
-.title {
-  font-size: large;
-} */
-
 body {
-  /* display: flex; */
   background-color: white;
   background-repeat: repeat;
   background-size: contain;
@@ -19,10 +9,3 @@ body {
   align-items: center;
   height: 100vh;
 }
-
-/* .layout {
-  background-color: yellow;
-  display: flex;
-  height: 100vh;
-  width: auto;
-} */
